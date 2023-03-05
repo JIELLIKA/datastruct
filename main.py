@@ -11,23 +11,24 @@ class Stack:
         self.top = top
 
     def push(self, data):
+        """Добавляет элемент в конец списка"""
         new_node = Node(data)
         new_node.new_node = self.top
         self.top = new_node
 
-if __name__ == '__main__':
-    n1 = Node(5, None)
-    n2 = Node('a', n1)
-    print(n1.data)
-    print(n2.data)
-    print(n1)
-    print(n2.new_node)
+    def pop(self):
+        """Удаляет последний элемент из списка"""
+        if self.top is None:
+            return
+        value = self.top.data
+        self.top = self.top.new_node
+        return value
+
+
+if __name__ == "__main__":
     stack = Stack()
     stack.push('data1')
     stack.push('data2')
-    stack.push('data3')
+    data = stack.pop()
     print(stack.top.data)
-    print(stack.top.new_node.data)
-    print(stack.top.new_node.new_node.data)
-    print(stack.top.new_node.new_node.new_node)
-    print(stack.top.new_node.new_node.new_node.data)
+    print(data)
