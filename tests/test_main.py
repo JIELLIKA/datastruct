@@ -17,3 +17,4 @@ class TestMain(unittest.TestCase):
         node_1 = (10)
         node_2 = Node(5, node_1)
         assert node_2.new_node is node_1
+
