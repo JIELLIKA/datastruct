@@ -1,8 +1,8 @@
 class Node:
 
-    def __init__(self, data, new_node=None):
+    def __init__(self, data, next_node=None):
         self.data = data
-        self.new_node = new_node
+        self.next_node = next_node
 
 
 class Stack:
@@ -13,7 +13,7 @@ class Stack:
     def push(self, data):
         """Добавляет элемент в конец списка"""
         new_node = Node(data)
-        new_node.new_node = self.top
+        new_node.next_node = self.top
         self.top = new_node
 
     def pop(self):
@@ -21,7 +21,7 @@ class Stack:
         if self.top is None:
             return
         value = self.top.data
-        self.top = self.top.new_node
+        self.top = self.top.next_node
         return value
 
 
