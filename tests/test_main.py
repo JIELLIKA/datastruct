@@ -7,7 +7,7 @@ class TestMain(unittest.TestCase):
     def test_node_init(self):
         node_1 = Node(10)
         self.assertEqual(node_1.data, 10)
-        self.assertEqual(node_1.new_node, None)
+        self.assertEqual(node_1.next_node, None)
 
     def test_stack_init(self):
         stack_1 = Stack()
@@ -18,9 +18,9 @@ class TestMain(unittest.TestCase):
         stack_1.push('test_data1')
         stack_1.push('test_data2')
         stack_1.push('test_data3')
-        self.assertEqual(stack_1.top.new_node.data, 'test_data2')
-        self.assertEqual(stack_1.top.new_node.new_node.data, 'test_data1')
-        self.assertEqual(stack_1.top.new_node.new_node.new_node, None)
+        self.assertEqual(stack_1.top.next_node.data, 'test_data2')
+        self.assertEqual(stack_1.top.next_node.next_node.data, 'test_data1')
+        self.assertEqual(stack_1.top.next_node.next_node.next_node, None)
 
     def test_stack_pop_one(self):
         stack_2 = Stack()
