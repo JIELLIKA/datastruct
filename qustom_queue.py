@@ -1,6 +1,7 @@
 class Node:
 
     def __init__(self, data, next_node=None):
+        """Инициализация экземпляра класса Node"""
         self.data = data
         self.next_node = next_node
 
@@ -8,10 +9,12 @@ class Node:
 class Queue:
 
     def __init__(self, head=None, tail=None):
+        """Инициализация экземпляра класса Queue"""
         self.head = head
         self.tail = tail
 
     def enqueue(self, data):
+        """Добавление элементов в очередь"""
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
@@ -20,14 +23,20 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
+    def dequeue(self):
+        """Удаление элементов из очереди по методу FiFo"""
+        if self.head is None:
+            return None
+        deq_element = self.head
+        self.head = self.head.next_node
+        return deq_element.data
+
 
 queue = Queue()
 queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
-
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
-print(queue.tail.next_node.data)
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
