@@ -1,13 +1,10 @@
-class Node:
-
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
+from classes.node import Node
 
 
 class Stack:
 
     def __init__(self, top=None):
+        """Инициализация экземпляра класса Stack"""
         self.top = top
 
     def push(self, data):
@@ -25,10 +22,10 @@ class Stack:
         return value
 
 
-if __name__ == "__main__":
-    stack = Stack()
-    stack.push('data1')
-    stack.push('data2')
-    data = stack.pop()
-    print(stack.top.data)
-    print(data)
+# if __name__ == "__main__":
+#     stack = Stack()
+#     stack.push('data1')
+#     stack.push('data2')
+#     data = stack.pop()
+#     print(stack.top.data)
+#     print(data)

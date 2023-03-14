@@ -1,9 +1,4 @@
-class Node:
-
-    def __init__(self, data, next_node=None):
-        """Инициализация экземпляра класса Node"""
-        self.data = data
-        self.next_node = next_node
+from classes.node import Node
 
 
 class Queue:
@@ -32,11 +27,12 @@ class Queue:
         return deq_element.data
 
 
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
+# if __name__ == "__main__":
+#     queue = Queue()
+#     queue.enqueue('data1')
+#     queue.enqueue('data2')
+#     queue.enqueue('data3')
+#     print(queue.dequeue())
+#     print(queue.dequeue())
+#     print(queue.dequeue())
+#     print(queue.dequeue())
