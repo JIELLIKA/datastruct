@@ -1,13 +1,9 @@
 import unittest
-from qustom_queue import *
+from classes.qustom_queue import *
 
 
 class TestQustom_queue(unittest.TestCase):
 
-    def test_node_init(self):
-        node_1 = Node(10)
-        self.assertEqual(node_1.data, 10)
-        self.assertEqual(node_1.next_node, None)
 
     def test_queue_init(self):
         queue_1 = Queue()
